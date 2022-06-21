@@ -657,6 +657,20 @@
                   <td><p> </p></td>
                 </tr>
               
+                <tr>
+                  <td>attributes</td>
+                  <td><a href="#opentelemetry.proto.common.v1.KeyValue">KeyValue</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>dropped_attributes_count</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
             </tbody>
           </table>
 
@@ -1477,7 +1491,7 @@ values in the positive and negative Buckets plus the &#34;zero_count&#34; field.
                 <tr>
                   <td>sum</td>
                   <td><a href="#double">double</a></td>
-                  <td></td>
+                  <td>optional</td>
                   <td><p>sum of the values in the population. If count is zero then this field
 must be zero.
 
@@ -1845,7 +1859,7 @@ an empty instrumentation library name (unknown). </p></td>
         
       
         <h3 id="opentelemetry.proto.metrics.v1.Metric">Metric</h3>
-        <p>Defines a Metric which has one or more timeseries.  The following is a</p><p>brief summary of the Metric data model.  For more details, see:</p><p>https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/metrics/datamodel.md</p><p>The data model and relation between entities is shown in the</p><p>diagram below. Here, "DataPoint" is the term used to refer to any</p><p>one of the specific data point value types, and "points" is the term used</p><p>to refer to any one of the lists of points contained in the Metric.</p><p>- Metric is composed of a metadata and data.</p><p>- Metadata part contains a name, description, unit.</p><p>- Data is one of the possible types (Sum, Gauge, Histogram, Summary).</p><p>- DataPoint contains timestamps, attributes, and one of the possible value type</p><p>fields.</p><p>Metric</p><p>+------------+</p><p>|name        |</p><p>|description |</p><p>|unit        |     +------------------------------------+</p><p>|data        |---> |Gauge, Sum, Histogram, Summary, ... |</p><p>+------------+     +------------------------------------+</p><p>Data [One of Gauge, Sum, Histogram, Summary, ...]</p><p>+-----------+</p><p>|...        |  // Metadata about the Data.</p><p>|points     |--+</p><p>+-----------+  |</p><p>|      +---------------------------+</p><p>|      |DataPoint 1                |</p><p>v      |+------+------+   +------+ |</p><p>+-----+   ||label |label |...|label | |</p><p>|  1  |-->||value1|value2|...|valueN| |</p><p>+-----+   |+------+------+   +------+ |</p><p>|  .  |   |+-----+                    |</p><p>|  .  |   ||value|                    |</p><p>|  .  |   |+-----+                    |</p><p>|  .  |   +---------------------------+</p><p>|  .  |                   .</p><p>|  .  |                   .</p><p>|  .  |                   .</p><p>|  .  |   +---------------------------+</p><p>|  .  |   |DataPoint M                |</p><p>+-----+   |+------+------+   +------+ |</p><p>|  M  |-->||label |label |...|label | |</p><p>+-----+   ||value1|value2|...|valueN| |</p><p>|+------+------+   +------+ |</p><p>|+-----+                    |</p><p>||value|                    |</p><p>|+-----+                    |</p><p>+---------------------------+</p><p>Each distinct type of DataPoint represents the output of a specific</p><p>aggregation function, the result of applying the DataPoint's</p><p>associated function of to one or more measurements.</p><p>All DataPoint types have three common fields:</p><p>- Attributes includes key-value pairs associated with the data point</p><p>- TimeUnixNano is required, set to the end time of the aggregation</p><p>- StartTimeUnixNano is optional, but strongly encouraged for DataPoints</p><p>having an AggregationTemporality field, as discussed below.</p><p>Both TimeUnixNano and StartTimeUnixNano values are expressed as</p><p>UNIX Epoch time in nanoseconds since 00:00:00 UTC on 1 January 1970.</p><p># TimeUnixNano</p><p>This field is required, having consistent interpretation across</p><p>DataPoint types.  TimeUnixNano is the moment corresponding to when</p><p>the data point's aggregate value was captured.</p><p>Data points with the 0 value for TimeUnixNano SHOULD be rejected</p><p>by consumers.</p><p># StartTimeUnixNano</p><p>StartTimeUnixNano in general allows detecting when a sequence of</p><p>observations is unbroken.  This field indicates to consumers the</p><p>start time for points with cumulative and delta</p><p>AggregationTemporality, and it should be included whenever possible</p><p>to support correct rate calculation.  Although it may be omitted</p><p>when the start time is truly unknown, setting StartTimeUnixNano is</p><p>strongly encouraged.</p>
+        <p>Defines a Metric which has one or more timeseries.  The following is a</p><p>brief summary of the Metric data model.  For more details, see:</p><p>https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/metrics/data-model.md</p><p>The data model and relation between entities is shown in the</p><p>diagram below. Here, "DataPoint" is the term used to refer to any</p><p>one of the specific data point value types, and "points" is the term used</p><p>to refer to any one of the lists of points contained in the Metric.</p><p>- Metric is composed of a metadata and data.</p><p>- Metadata part contains a name, description, unit.</p><p>- Data is one of the possible types (Sum, Gauge, Histogram, Summary).</p><p>- DataPoint contains timestamps, attributes, and one of the possible value type</p><p>fields.</p><p>Metric</p><p>+------------+</p><p>|name        |</p><p>|description |</p><p>|unit        |     +------------------------------------+</p><p>|data        |---> |Gauge, Sum, Histogram, Summary, ... |</p><p>+------------+     +------------------------------------+</p><p>Data [One of Gauge, Sum, Histogram, Summary, ...]</p><p>+-----------+</p><p>|...        |  // Metadata about the Data.</p><p>|points     |--+</p><p>+-----------+  |</p><p>|      +---------------------------+</p><p>|      |DataPoint 1                |</p><p>v      |+------+------+   +------+ |</p><p>+-----+   ||label |label |...|label | |</p><p>|  1  |-->||value1|value2|...|valueN| |</p><p>+-----+   |+------+------+   +------+ |</p><p>|  .  |   |+-----+                    |</p><p>|  .  |   ||value|                    |</p><p>|  .  |   |+-----+                    |</p><p>|  .  |   +---------------------------+</p><p>|  .  |                   .</p><p>|  .  |                   .</p><p>|  .  |                   .</p><p>|  .  |   +---------------------------+</p><p>|  .  |   |DataPoint M                |</p><p>+-----+   |+------+------+   +------+ |</p><p>|  M  |-->||label |label |...|label | |</p><p>+-----+   ||value1|value2|...|valueN| |</p><p>|+------+------+   +------+ |</p><p>|+-----+                    |</p><p>||value|                    |</p><p>|+-----+                    |</p><p>+---------------------------+</p><p>Each distinct type of DataPoint represents the output of a specific</p><p>aggregation function, the result of applying the DataPoint's</p><p>associated function of to one or more measurements.</p><p>All DataPoint types have three common fields:</p><p>- Attributes includes key-value pairs associated with the data point</p><p>- TimeUnixNano is required, set to the end time of the aggregation</p><p>- StartTimeUnixNano is optional, but strongly encouraged for DataPoints</p><p>having an AggregationTemporality field, as discussed below.</p><p>Both TimeUnixNano and StartTimeUnixNano values are expressed as</p><p>UNIX Epoch time in nanoseconds since 00:00:00 UTC on 1 January 1970.</p><p># TimeUnixNano</p><p>This field is required, having consistent interpretation across</p><p>DataPoint types.  TimeUnixNano is the moment corresponding to when</p><p>the data point's aggregate value was captured.</p><p>Data points with the 0 value for TimeUnixNano SHOULD be rejected</p><p>by consumers.</p><p># StartTimeUnixNano</p><p>StartTimeUnixNano in general allows detecting when a sequence of</p><p>observations is unbroken.  This field indicates to consumers the</p><p>start time for points with cumulative and delta</p><p>AggregationTemporality, and it should be included whenever possible</p><p>to support correct rate calculation.  Although it may be omitted</p><p>when the start time is truly unknown, setting StartTimeUnixNano is</p><p>strongly encouraged.</p>
 
         
           <table class="field-table">
@@ -2874,7 +2888,7 @@ like server name can be set using the resource API. Examples of attributes:
     &#34;abc.com/score&#34;: 10.239
 
 The OpenTelemetry API specification further restricts the allowed value types:
-https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/common/common.md#attributes
+https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/common/README.md#attribute
 Attribute keys MUST be unique (it is not allowed to have more than one
 attribute with the same key). </p></td>
                 </tr>
