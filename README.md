@@ -4,7 +4,7 @@
 
 The proto files can be consumed as GIT submodules or copied and built directly in the consumer project.
 
-The compiled files are published to central repositories (Maven, NPM...) from OpenTelemetry client libraries.
+The compiled files are published to central repositories (Maven, ...) from OpenTelemetry client libraries.
 
 See [contribution guidelines](CONTRIBUTING.md) if you would like to make any changes.
 
@@ -32,7 +32,7 @@ metrics/\*<br>collector/metrics/*    | Stable   |
 resource/*                           | Stable   |
 trace/trace.proto<br>collector/trace/* | Stable   |
 trace/trace_config.proto             | Alpha    |
-logs/\*<br>collector/logs/*          | Beta     |
+logs/\*<br>collector/logs/*          | Stable   |
 **JSON encoding**                    |          |
 All messages                         | Alpha    |
 

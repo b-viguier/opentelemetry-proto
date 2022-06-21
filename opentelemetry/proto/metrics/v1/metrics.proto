@@ -19,6 +19,7 @@ package opentelemetry.proto.metrics.v1;
 import "opentelemetry/proto/common/v1/common.proto";
 import "opentelemetry/proto/resource/v1/resource.proto";
 
+option csharp_namespace = "OpenTelemetry.Proto.Metrics.V1";
 option java_multiple_files = true;
 option java_package = "io.opentelemetry.proto.metrics.v1";
 option java_outer_classname = "MetricsProto";
@@ -122,7 +123,7 @@ message InstrumentationLibraryMetrics {
 // Defines a Metric which has one or more timeseries.  The following is a
 // brief summary of the Metric data model.  For more details, see:
 //
-//   https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/metrics/datamodel.md
+//   https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/metrics/data-model.md
 //
 //
 // The data model and relation between entities is shown in the
@@ -538,7 +539,7 @@ message ExponentialHistogramDataPoint {
   // Negative events *can* be recorded, but sum should not be filled out when
   // doing so.  This is specifically to enforce compatibility w/ OpenMetrics,
   // see: https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md#histogram
-  double sum = 5;
+  optional double sum = 5;
   
   // scale describes the resolution of the histogram.  Boundaries are
   // located at powers of the base, where:

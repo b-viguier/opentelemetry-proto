@@ -19,6 +19,7 @@ package opentelemetry.proto.trace.v1;
 import "opentelemetry/proto/common/v1/common.proto";
 import "opentelemetry/proto/resource/v1/resource.proto";
 
+option csharp_namespace = "OpenTelemetry.Proto.Trace.V1";
 option java_multiple_files = true;
 option java_package = "io.opentelemetry.proto.trace.v1";
 option java_outer_classname = "TraceProto";
@@ -231,7 +232,7 @@ message Span {
   //     "abc.com/score": 10.239
   //
   // The OpenTelemetry API specification further restricts the allowed value types:
-  // https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/common/common.md#attributes
+  // https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/common/README.md#attribute
   // Attribute keys MUST be unique (it is not allowed to have more than one
   // attribute with the same key).
   repeated opentelemetry.proto.common.v1.KeyValue attributes = 9;
