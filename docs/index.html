@@ -187,10 +187,6 @@
                 </li>
               
                 <li>
-                  <a href="#opentelemetry.proto.common.v1.InstrumentationLibrary"><span class="badge">M</span>InstrumentationLibrary</a>
-                </li>
-              
-                <li>
                   <a href="#opentelemetry.proto.common.v1.InstrumentationScope"><span class="badge">M</span>InstrumentationScope</a>
                 </li>
               
@@ -212,10 +208,6 @@
           <li>
             <a href="#logs.proto">logs.proto</a>
             <ul>
-              
-                <li>
-                  <a href="#opentelemetry.proto.logs.v1.InstrumentationLibraryLogs"><span class="badge">M</span>InstrumentationLibraryLogs</a>
-                </li>
               
                 <li>
                   <a href="#opentelemetry.proto.logs.v1.LogRecord"><span class="badge">M</span>LogRecord</a>
@@ -251,6 +243,10 @@
           <li>
             <a href="#logs_service.proto">logs_service.proto</a>
             <ul>
+              
+                <li>
+                  <a href="#opentelemetry.proto.collector.logs.v1.ExportLogsPartialSuccess"><span class="badge">M</span>ExportLogsPartialSuccess</a>
+                </li>
               
                 <li>
                   <a href="#opentelemetry.proto.collector.logs.v1.ExportLogsServiceRequest"><span class="badge">M</span>ExportLogsServiceRequest</a>
@@ -301,10 +297,6 @@
               
                 <li>
                   <a href="#opentelemetry.proto.metrics.v1.HistogramDataPoint"><span class="badge">M</span>HistogramDataPoint</a>
-                </li>
-              
-                <li>
-                  <a href="#opentelemetry.proto.metrics.v1.InstrumentationLibraryMetrics"><span class="badge">M</span>InstrumentationLibraryMetrics</a>
                 </li>
               
                 <li>
@@ -363,6 +355,10 @@
             <ul>
               
                 <li>
+                  <a href="#opentelemetry.proto.collector.metrics.v1.ExportMetricsPartialSuccess"><span class="badge">M</span>ExportMetricsPartialSuccess</a>
+                </li>
+              
+                <li>
                   <a href="#opentelemetry.proto.collector.metrics.v1.ExportMetricsServiceRequest"><span class="badge">M</span>ExportMetricsServiceRequest</a>
                 </li>
               
@@ -399,10 +395,6 @@
           <li>
             <a href="#trace.proto">trace.proto</a>
             <ul>
-              
-                <li>
-                  <a href="#opentelemetry.proto.trace.v1.InstrumentationLibrarySpans"><span class="badge">M</span>InstrumentationLibrarySpans</a>
-                </li>
               
                 <li>
                   <a href="#opentelemetry.proto.trace.v1.ResourceSpans"><span class="badge">M</span>ResourceSpans</a>
@@ -448,39 +440,12 @@
         
           
           <li>
-            <a href="#trace_config.proto">trace_config.proto</a>
-            <ul>
-              
-                <li>
-                  <a href="#opentelemetry.proto.trace.v1.ConstantSampler"><span class="badge">M</span>ConstantSampler</a>
-                </li>
-              
-                <li>
-                  <a href="#opentelemetry.proto.trace.v1.RateLimitingSampler"><span class="badge">M</span>RateLimitingSampler</a>
-                </li>
-              
-                <li>
-                  <a href="#opentelemetry.proto.trace.v1.TraceConfig"><span class="badge">M</span>TraceConfig</a>
-                </li>
-              
-                <li>
-                  <a href="#opentelemetry.proto.trace.v1.TraceIdRatioBased"><span class="badge">M</span>TraceIdRatioBased</a>
-                </li>
-              
-              
-                <li>
-                  <a href="#opentelemetry.proto.trace.v1.ConstantSampler.ConstantDecision"><span class="badge">E</span>ConstantSampler.ConstantDecision</a>
-                </li>
-              
-              
-              
-            </ul>
-          </li>
-        
-          
-          <li>
             <a href="#trace_service.proto">trace_service.proto</a>
             <ul>
+              
+                <li>
+                  <a href="#opentelemetry.proto.collector.trace.v1.ExportTracePartialSuccess"><span class="badge">M</span>ExportTracePartialSuccess</a>
+                </li>
               
                 <li>
                   <a href="#opentelemetry.proto.collector.trace.v1.ExportTraceServiceRequest"><span class="badge">M</span>ExportTraceServiceRequest</a>
@@ -593,37 +558,6 @@
                   <td><a href="#opentelemetry.proto.common.v1.AnyValue">AnyValue</a></td>
                   <td>repeated</td>
                   <td><p>Array of values. The array may be empty (contain 0 elements). </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-        <h3 id="opentelemetry.proto.common.v1.InstrumentationLibrary">InstrumentationLibrary</h3>
-        <p>InstrumentationLibrary is a message representing the instrumentation library information</p><p>such as the fully qualified name and version.</p><p>InstrumentationLibrary is wire-compatible with InstrumentationScope for binary</p><p>Protobuf format.</p><p>This message is deprecated and will be removed on June 15, 2022.</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>name</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p>An empty instrumentation library name means the name is unknown. </p></td>
-                </tr>
-              
-                <tr>
-                  <td>version</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
                 </tr>
               
             </tbody>
@@ -749,46 +683,6 @@ value with the same key). </p></td>
       </div>
       <p></p>
 
-      
-        <h3 id="opentelemetry.proto.logs.v1.InstrumentationLibraryLogs">InstrumentationLibraryLogs</h3>
-        <p>A collection of Logs produced by an InstrumentationLibrary.</p><p>InstrumentationLibraryLogs is wire-compatible with ScopeLogs for binary</p><p>Protobuf format.</p><p>This message is deprecated and will be removed on June 15, 2022.</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>instrumentation_library</td>
-                  <td><a href="#opentelemetry.proto.common.v1.InstrumentationLibrary">opentelemetry.proto.common.v1.InstrumentationLibrary</a></td>
-                  <td></td>
-                  <td><p>The instrumentation library information for the logs in this message.
-Semantically when InstrumentationLibrary isn&#39;t set, it is equivalent with
-an empty instrumentation library name (unknown). </p></td>
-                </tr>
-              
-                <tr>
-                  <td>log_records</td>
-                  <td><a href="#opentelemetry.proto.logs.v1.LogRecord">LogRecord</a></td>
-                  <td>repeated</td>
-                  <td><p>A list of logs that originate from an instrumentation library. </p></td>
-                </tr>
-              
-                <tr>
-                  <td>schema_url</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p>This schema_url applies to all logs in the &#34;logs&#34; field. </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
       
         <h3 id="opentelemetry.proto.logs.v1.LogRecord">LogRecord</h3>
         <p>A log record according to OpenTelemetry Log Data Model:</p><p>https://github.com/open-telemetry/oteps/blob/main/text/logs/0097-log-data-model.md</p>
@@ -963,39 +857,6 @@ If this field is not set then resource info is unknown. </p></td>
                 </tr>
               
                 <tr>
-                  <td>instrumentation_library_logs</td>
-                  <td><a href="#opentelemetry.proto.logs.v1.InstrumentationLibraryLogs">InstrumentationLibraryLogs</a></td>
-                  <td>repeated</td>
-                  <td><p><strong>Deprecated.</strong> A list of InstrumentationLibraryLogs that originate from a resource.
-This field is deprecated and will be removed after grace period expires on June 15, 2022.
-
-During the grace period the following rules SHOULD be followed:
-
-For Binary Protobufs
-====================
-Binary Protobuf senders SHOULD NOT set instrumentation_library_logs. Instead
-scope_logs SHOULD be set.
-
-Binary Protobuf receivers SHOULD check if instrumentation_library_logs is set
-and scope_logs is not set then the value in instrumentation_library_logs
-SHOULD be used instead by converting InstrumentationLibraryLogs into ScopeLogs.
-If scope_logs is set then instrumentation_library_logs SHOULD be ignored.
-
-For JSON
-========
-JSON senders that set instrumentation_library_logs field MAY also set
-scope_logs to carry the same logs, essentially double-publishing the same data.
-Such double-publishing MAY be controlled by a user-settable option.
-If double-publishing is not used then the senders SHOULD set scope_logs and
-SHOULD NOT set instrumentation_library_logs.
-
-JSON receivers SHOULD check if instrumentation_library_logs is set and
-scope_logs is not set then the value in instrumentation_library_logs
-SHOULD be used instead by converting InstrumentationLibraryLogs into ScopeLogs.
-If scope_logs is set then instrumentation_library_logs field SHOULD be ignored. </p></td>
-                </tr>
-              
-                <tr>
                   <td>schema_url</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
@@ -1006,27 +867,6 @@ to the data in the &#34;scope_logs&#34; field which have their own schema_url fi
             </tbody>
           </table>
 
-          
-            
-            
-            <h4>Fields with deprecated option</h4>
-            <table>
-              <thead>
-                <tr>
-                  <td>Name</td>
-                  <td>Option</td>
-                </tr>
-              </thead>
-              <tbody>
-              
-                <tr>
-                  <td>instrumentation_library_logs</td>
-                  <td><p>true</p></td>
-                </tr>
-              
-              </tbody>
-            </table>
-            
           
 
         
@@ -1269,6 +1109,46 @@ an empty instrumentation scope name (unknown). </p></td>
       <p></p>
 
       
+        <h3 id="opentelemetry.proto.collector.logs.v1.ExportLogsPartialSuccess">ExportLogsPartialSuccess</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>rejected_log_records</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>The number of rejected log records.
+
+A `rejected_&lt;signal&gt;` field holding a `0` value indicates that the
+request was fully accepted. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>error_message</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>A developer-facing human-readable message in English. It should be used
+either to explain why the server rejected parts of the data during a partial
+success or to convey warnings/suggestions during a full success. The message
+should offer guidance on how users can address such issues.
+
+error_message is an optional field. An error_message with an empty value
+is equivalent to it not being set. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
         <h3 id="opentelemetry.proto.collector.logs.v1.ExportLogsServiceRequest">ExportLogsServiceRequest</h3>
         <p></p>
 
@@ -1301,6 +1181,37 @@ in that case this array will contain multiple elements. </p></td>
         <p></p>
 
         
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>partial_success</td>
+                  <td><a href="#opentelemetry.proto.collector.logs.v1.ExportLogsPartialSuccess">ExportLogsPartialSuccess</a></td>
+                  <td></td>
+                  <td><p>The details of a partially successful export request.
+
+If the request is only partially accepted
+(i.e. when the server accepts only parts of the data and rejects the rest)
+the server MUST initialize the `partial_success` field and MUST
+set the `rejected_&lt;signal&gt;` with the number of items it rejected.
+
+Servers MAY also make use of the `partial_success` field to convey
+warnings/suggestions to senders even when the request was fully accepted.
+In such cases, the `rejected_&lt;signal&gt;` MUST have a value of `0` and
+the `error_message` MUST be non-empty.
+
+A `partial_success` message with an empty value (rejected_&lt;signal&gt; = 0 and
+`error_message` = &#34;&#34;) is equivalent to it not being set/present. Senders
+SHOULD interpret it the same way as in the full success case. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
 
         
       
@@ -1512,8 +1423,8 @@ located at powers of the base, where:
   base = (2^(2^-scale))
 
 The histogram bucket identified by `index`, a signed integer,
-contains values that are greater than or equal to (base^index) and
-less than (base^(index&#43;1)).
+contains values that are greater than (base^index) and
+less than or equal to (base^(index&#43;1)).
 
 The positive and negative ranges of the histogram are expressed
 separately.  Negative values are mapped by their absolute value
@@ -1613,7 +1524,7 @@ Note: This uses a varint encoding as a simple form of compression. </p></td>
                   <td>repeated</td>
                   <td><p>Count is an array of counts, where count[i] carries the count
 of the bucket at index (offset&#43;i).  count[i] is the count of
-values greater than or equal to base^(offset&#43;i) and less than
+values greater than base^(offset&#43;i) and less or equal to than
 base^(offset&#43;i&#43;1).
 
 Note: By contrast, the explicit HistogramDataPoint uses
@@ -1809,46 +1720,6 @@ for the available flags and their meaning. </p></td>
                   <td><a href="#double">double</a></td>
                   <td>optional</td>
                   <td><p>max is the maximum value over (start_time, end_time]. </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-        <h3 id="opentelemetry.proto.metrics.v1.InstrumentationLibraryMetrics">InstrumentationLibraryMetrics</h3>
-        <p>A collection of Metrics produced by an InstrumentationLibrary.</p><p>InstrumentationLibraryMetrics is wire-compatible with ScopeMetrics for binary</p><p>Protobuf format.</p><p>This message is deprecated and will be removed on June 15, 2022.</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>instrumentation_library</td>
-                  <td><a href="#opentelemetry.proto.common.v1.InstrumentationLibrary">opentelemetry.proto.common.v1.InstrumentationLibrary</a></td>
-                  <td></td>
-                  <td><p>The instrumentation library information for the metrics in this message.
-Semantically when InstrumentationLibrary isn&#39;t set, it is equivalent with
-an empty instrumentation library name (unknown). </p></td>
-                </tr>
-              
-                <tr>
-                  <td>metrics</td>
-                  <td><a href="#opentelemetry.proto.metrics.v1.Metric">Metric</a></td>
-                  <td>repeated</td>
-                  <td><p>A list of metrics that originate from an instrumentation library. </p></td>
-                </tr>
-              
-                <tr>
-                  <td>schema_url</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p>This schema_url applies to all metrics in the &#34;metrics&#34; field. </p></td>
                 </tr>
               
             </tbody>
@@ -2064,39 +1935,6 @@ If this field is not set then no resource info is known. </p></td>
                 </tr>
               
                 <tr>
-                  <td>instrumentation_library_metrics</td>
-                  <td><a href="#opentelemetry.proto.metrics.v1.InstrumentationLibraryMetrics">InstrumentationLibraryMetrics</a></td>
-                  <td>repeated</td>
-                  <td><p><strong>Deprecated.</strong> A list of InstrumentationLibraryMetrics that originate from a resource.
-This field is deprecated and will be removed after grace period expires on June 15, 2022.
-
-During the grace period the following rules SHOULD be followed:
-
-For Binary Protobufs
-====================
-Binary Protobuf senders SHOULD NOT set instrumentation_library_metrics. Instead
-scope_metrics SHOULD be set.
-
-Binary Protobuf receivers SHOULD check if instrumentation_library_metrics is set
-and scope_metrics is not set then the value in instrumentation_library_metrics
-SHOULD be used instead by converting InstrumentationLibraryMetrics into ScopeMetrics.
-If scope_metrics is set then instrumentation_library_metrics SHOULD be ignored.
-
-For JSON
-========
-JSON senders that set instrumentation_library_metrics field MAY also set
-scope_metrics to carry the same metrics, essentially double-publishing the same data.
-Such double-publishing MAY be controlled by a user-settable option.
-If double-publishing is not used then the senders SHOULD set scope_metrics and
-SHOULD NOT set instrumentation_library_metrics.
-
-JSON receivers SHOULD check if instrumentation_library_metrics is set and
-scope_metrics is not set then the value in instrumentation_library_metrics
-SHOULD be used instead by converting InstrumentationLibraryMetrics into ScopeMetrics.
-If scope_metrics is set then instrumentation_library_metrics field SHOULD be ignored. </p></td>
-                </tr>
-              
-                <tr>
                   <td>schema_url</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
@@ -2107,27 +1945,6 @@ to the data in the &#34;scope_metrics&#34; field which have their own schema_url
             </tbody>
           </table>
 
-          
-            
-            
-            <h4>Fields with deprecated option</h4>
-            <table>
-              <thead>
-                <tr>
-                  <td>Name</td>
-                  <td>Option</td>
-                </tr>
-              </thead>
-              <tbody>
-              
-                <tr>
-                  <td>instrumentation_library_metrics</td>
-                  <td><p>true</p></td>
-                </tr>
-              
-              </tbody>
-            </table>
-            
           
 
         
@@ -2479,6 +2296,46 @@ for an equivalent to the Prometheus &#34;staleness marker&#34;.</p></td>
       <p></p>
 
       
+        <h3 id="opentelemetry.proto.collector.metrics.v1.ExportMetricsPartialSuccess">ExportMetricsPartialSuccess</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>rejected_data_points</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>The number of rejected data points.
+
+A `rejected_&lt;signal&gt;` field holding a `0` value indicates that the
+request was fully accepted. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>error_message</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>A developer-facing human-readable message in English. It should be used
+either to explain why the server rejected parts of the data during a partial
+success or to convey warnings/suggestions during a full success. The message
+should offer guidance on how users can address such issues.
+
+error_message is an optional field. An error_message with an empty value
+is equivalent to it not being set. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
         <h3 id="opentelemetry.proto.collector.metrics.v1.ExportMetricsServiceRequest">ExportMetricsServiceRequest</h3>
         <p></p>
 
@@ -2511,6 +2368,37 @@ in that case this array will contain multiple elements. </p></td>
         <p></p>
 
         
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>partial_success</td>
+                  <td><a href="#opentelemetry.proto.collector.metrics.v1.ExportMetricsPartialSuccess">ExportMetricsPartialSuccess</a></td>
+                  <td></td>
+                  <td><p>The details of a partially successful export request.
+
+If the request is only partially accepted
+(i.e. when the server accepts only parts of the data and rejects the rest)
+the server MUST initialize the `partial_success` field and MUST
+set the `rejected_&lt;signal&gt;` with the number of items it rejected.
+
+Servers MAY also make use of the `partial_success` field to convey
+warnings/suggestions to senders even when the request was fully accepted.
+In such cases, the `rejected_&lt;signal&gt;` MUST have a value of `0` and
+the `error_message` MUST be non-empty.
+
+A `partial_success` message with an empty value (rejected_&lt;signal&gt; = 0 and
+`error_message` = &#34;&#34;) is equivalent to it not being set/present. Senders
+SHOULD interpret it the same way as in the full success case. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
 
         
       
@@ -2596,46 +2484,6 @@ no attributes were dropped. </p></td>
       <p></p>
 
       
-        <h3 id="opentelemetry.proto.trace.v1.InstrumentationLibrarySpans">InstrumentationLibrarySpans</h3>
-        <p>A collection of Spans produced by an InstrumentationLibrary.</p><p>InstrumentationLibrarySpans is wire-compatible with ScopeSpans for binary</p><p>Protobuf format.</p><p>This message is deprecated and will be removed on June 15, 2022.</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>instrumentation_library</td>
-                  <td><a href="#opentelemetry.proto.common.v1.InstrumentationLibrary">opentelemetry.proto.common.v1.InstrumentationLibrary</a></td>
-                  <td></td>
-                  <td><p>The instrumentation library information for the spans in this message.
-Semantically when InstrumentationLibrary isn&#39;t set, it is equivalent with
-an empty instrumentation library name (unknown). </p></td>
-                </tr>
-              
-                <tr>
-                  <td>spans</td>
-                  <td><a href="#opentelemetry.proto.trace.v1.Span">Span</a></td>
-                  <td>repeated</td>
-                  <td><p>A list of Spans that originate from an instrumentation library. </p></td>
-                </tr>
-              
-                <tr>
-                  <td>schema_url</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p>This schema_url applies to all spans and span events in the &#34;spans&#34; field. </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
         <h3 id="opentelemetry.proto.trace.v1.ResourceSpans">ResourceSpans</h3>
         <p>A collection of ScopeSpans from a Resource.</p>
 
@@ -2662,39 +2510,6 @@ If this field is not set then no resource info is known. </p></td>
                 </tr>
               
                 <tr>
-                  <td>instrumentation_library_spans</td>
-                  <td><a href="#opentelemetry.proto.trace.v1.InstrumentationLibrarySpans">InstrumentationLibrarySpans</a></td>
-                  <td>repeated</td>
-                  <td><p><strong>Deprecated.</strong> A list of InstrumentationLibrarySpans that originate from a resource.
-This field is deprecated and will be removed after grace period expires on June 15, 2022.
-
-During the grace period the following rules SHOULD be followed:
-
-For Binary Protobufs
-====================
-Binary Protobuf senders SHOULD NOT set instrumentation_library_spans. Instead
-scope_spans SHOULD be set.
-
-Binary Protobuf receivers SHOULD check if instrumentation_library_spans is set
-and scope_spans is not set then the value in instrumentation_library_spans
-SHOULD be used instead by converting InstrumentationLibrarySpans into ScopeSpans.
-If scope_spans is set then instrumentation_library_spans SHOULD be ignored.
-
-For JSON
-========
-JSON senders that set instrumentation_library_spans field MAY also set
-scope_spans to carry the same spans, essentially double-publishing the same data.
-Such double-publishing MAY be controlled by a user-settable option.
-If double-publishing is not used then the senders SHOULD set scope_spans and
-SHOULD NOT set instrumentation_library_spans.
-
-JSON receivers SHOULD check if instrumentation_library_spans is set and
-scope_spans is not set then the value in instrumentation_library_spans
-SHOULD be used instead by converting InstrumentationLibrarySpans into ScopeSpans.
-If scope_spans is set then instrumentation_library_spans field SHOULD be ignored. </p></td>
-                </tr>
-              
-                <tr>
                   <td>schema_url</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
@@ -2705,27 +2520,6 @@ to the data in the &#34;scope_spans&#34; field which have their own schema_url f
             </tbody>
           </table>
 
-          
-            
-            
-            <h4>Fields with deprecated option</h4>
-            <table>
-              <thead>
-                <tr>
-                  <td>Name</td>
-                  <td>Option</td>
-                </tr>
-              </thead>
-              <tbody>
-              
-                <tr>
-                  <td>instrumentation_library_spans</td>
-                  <td><p>true</p></td>
-                </tr>
-              
-              </tbody>
-            </table>
-            
           
 
         
@@ -2771,7 +2565,7 @@ an empty instrumentation scope name (unknown). </p></td>
         
       
         <h3 id="opentelemetry.proto.trace.v1.Span">Span</h3>
-        <p>Span represents a single operation within a trace. Spans can be</p><p>nested to form a trace tree. Spans may also be linked to other spans</p><p>from the same or different trace and form graphs. Often, a trace</p><p>contains a root span that describes the end-to-end latency, and one</p><p>or more subspans for its sub-operations. A trace can also contain</p><p>multiple root spans, or none at all. Spans do not need to be</p><p>contiguous - there may be gaps or overlaps between spans in a trace.</p><p>The next available field id is 17.</p>
+        <p>A Span represents a single operation performed by a single component of the system.</p><p>The next available field id is 17.</p>
 
         
           <table class="field-table">
@@ -3186,8 +2980,8 @@ between producer and consumer spans.</p></td>
               <tr>
                 <td>STATUS_CODE_OK</td>
                 <td>1</td>
-                <td><p>The Span has been validated by an Application developers or Operator to have
-completed successfully.</p></td>
+                <td><p>The Span has been validated by an Application developer or Operator to 
+have completed successfully.</p></td>
               </tr>
             
               <tr>
@@ -3206,198 +3000,50 @@ completed successfully.</p></td>
     
       
       <div class="file-heading">
-        <h2 id="trace_config.proto">trace_config.proto</h2><a href="#title">Top</a>
-      </div>
-      <p></p>
-
-      
-        <h3 id="opentelemetry.proto.trace.v1.ConstantSampler">ConstantSampler</h3>
-        <p>Sampler that always makes a constant decision on span sampling.</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>decision</td>
-                  <td><a href="#opentelemetry.proto.trace.v1.ConstantSampler.ConstantDecision">ConstantSampler.ConstantDecision</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-        <h3 id="opentelemetry.proto.trace.v1.RateLimitingSampler">RateLimitingSampler</h3>
-        <p>Sampler that tries to sample with a rate per time window.</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>qps</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p>Rate per second. </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-        <h3 id="opentelemetry.proto.trace.v1.TraceConfig">TraceConfig</h3>
-        <p>Global configuration of the trace service. All fields must be specified, or</p><p>the default (zero) values will be used for each type.</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>constant_sampler</td>
-                  <td><a href="#opentelemetry.proto.trace.v1.ConstantSampler">ConstantSampler</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>trace_id_ratio_based</td>
-                  <td><a href="#opentelemetry.proto.trace.v1.TraceIdRatioBased">TraceIdRatioBased</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>rate_limiting_sampler</td>
-                  <td><a href="#opentelemetry.proto.trace.v1.RateLimitingSampler">RateLimitingSampler</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>max_number_of_attributes</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p>The global default max number of attributes per span. </p></td>
-                </tr>
-              
-                <tr>
-                  <td>max_number_of_timed_events</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p>The global default max number of annotation events per span. </p></td>
-                </tr>
-              
-                <tr>
-                  <td>max_number_of_attributes_per_timed_event</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p>The global default max number of attributes per timed event. </p></td>
-                </tr>
-              
-                <tr>
-                  <td>max_number_of_links</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p>The global default max number of link entries per span. </p></td>
-                </tr>
-              
-                <tr>
-                  <td>max_number_of_attributes_per_link</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p>The global default max number of attributes per span. </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-        <h3 id="opentelemetry.proto.trace.v1.TraceIdRatioBased">TraceIdRatioBased</h3>
-        <p>Sampler that tries to uniformly sample traces with a given ratio.</p><p>The ratio of sampling a trace is equal to that of the specified ratio.</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>samplingRatio</td>
-                  <td><a href="#double">double</a></td>
-                  <td></td>
-                  <td><p>The desired ratio of sampling. Must be within [0.0, 1.0]. </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-
-      
-        <h3 id="opentelemetry.proto.trace.v1.ConstantSampler.ConstantDecision">ConstantSampler.ConstantDecision</h3>
-        <p>How spans should be sampled:</p><p>- Always off</p><p>- Always on</p><p>- Always follow the parent Span's decision (off if no parent).</p>
-        <table class="enum-table">
-          <thead>
-            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>ALWAYS_OFF</td>
-                <td>0</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>ALWAYS_ON</td>
-                <td>1</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>ALWAYS_PARENT</td>
-                <td>2</td>
-                <td><p></p></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      
-
-      
-
-      
-    
-      
-      <div class="file-heading">
         <h2 id="trace_service.proto">trace_service.proto</h2><a href="#title">Top</a>
       </div>
       <p></p>
 
+      
+        <h3 id="opentelemetry.proto.collector.trace.v1.ExportTracePartialSuccess">ExportTracePartialSuccess</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>rejected_spans</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>The number of rejected spans.
+
+A `rejected_&lt;signal&gt;` field holding a `0` value indicates that the
+request was fully accepted. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>error_message</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>A developer-facing human-readable message in English. It should be used
+either to explain why the server rejected parts of the data during a partial
+success or to convey warnings/suggestions during a full success. The message
+should offer guidance on how users can address such issues.
+
+error_message is an optional field. An error_message with an empty value
+is equivalent to it not being set. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
       
         <h3 id="opentelemetry.proto.collector.trace.v1.ExportTraceServiceRequest">ExportTraceServiceRequest</h3>
         <p></p>
@@ -3431,6 +3077,37 @@ in that case this array will contain multiple elements. </p></td>
         <p></p>
 
         
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>partial_success</td>
+                  <td><a href="#opentelemetry.proto.collector.trace.v1.ExportTracePartialSuccess">ExportTracePartialSuccess</a></td>
+                  <td></td>
+                  <td><p>The details of a partially successful export request.
+
+If the request is only partially accepted
+(i.e. when the server accepts only parts of the data and rejects the rest)
+the server MUST initialize the `partial_success` field and MUST
+set the `rejected_&lt;signal&gt;` with the number of items it rejected.
+
+Servers MAY also make use of the `partial_success` field to convey
+warnings/suggestions to senders even when the request was fully accepted.
+In such cases, the `rejected_&lt;signal&gt;` MUST have a value of `0` and
+the `error_message` MUST be non-empty.
+
+A `partial_success` message with an empty value (rejected_&lt;signal&gt; = 0 and
+`error_message` = &#34;&#34;) is equivalent to it not being set/present. Senders
+SHOULD interpret it the same way as in the full success case. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
 
         
       
